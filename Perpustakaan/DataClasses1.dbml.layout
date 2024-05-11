@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses1">
+  <DataContextMoniker Name="/DataClasses1DataContext" />
+  <nestedChildShapes>
+    <classShape Id="f0599bf1-746b-4dc3-81b0-8ddd7180b4c8" absoluteBounds="3.875, 3.5, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DataClasses1DataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1842ab8f-2282-4445-a4b6-58a0de5ff635" absoluteBounds="3.89, 3.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e64bf773-a15a-471f-baa4-7260bee189bd" absoluteBounds="0.875, 0.875, 2, 1.5785953776041663">
+      <DataClassMoniker Name="/DataClasses1DataContext/Buku" />
+      <nestedChildShapes>
+        <elementListCompartment Id="67f80da6-ea55-4d26-841f-21dbcaf5e1b6" absoluteBounds="0.89, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="33cb5bad-1991-4c90-94f7-ec16bc5fdc02" absoluteBounds="0.875, 3.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses1DataContext/Pelanggan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="10354a2c-60c9-4c78-b66e-8f39ea62cc02" absoluteBounds="0.89, 4.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="30c30fef-6243-4446-a9d6-1e935ea5b906" absoluteBounds="3.625, 0.625, 2, 1.9631982421875003">
+      <DataClassMoniker Name="/DataClasses1DataContext/Sewa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f3128bcd-f397-4d8b-9f03-c7a39a9f4814" absoluteBounds="3.64, 1.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.875 : 1.66429768880208); (3.625 : 1.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/Buku/Buku_Sewa" />
+      <nodes>
+        <classShapeMoniker Id="e64bf773-a15a-471f-baa4-7260bee189bd" />
+        <classShapeMoniker Id="30c30fef-6243-4446-a9d6-1e935ea5b906" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.875 : 5.20119466145833); (3.71875 : 5.20119466145833); (3.71875 : 2.5881982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/Pelanggan/Pelanggan_Sewa" />
+      <nodes>
+        <classShapeMoniker Id="33cb5bad-1991-4c90-94f7-ec16bc5fdc02" />
+        <classShapeMoniker Id="30c30fef-6243-4446-a9d6-1e935ea5b906" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

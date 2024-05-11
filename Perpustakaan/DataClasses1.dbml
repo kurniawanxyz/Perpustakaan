@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="perpustakaan" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=WIN-08F8A4QTCIG\MSSQLSERVER01;Initial Catalog=perpustakaan;Integrated Security=True;Pooling=False;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="Perpustakaan.Properties.Settings" SettingsPropertyName="perpustakaanConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Buku" Member="Bukus">
+    <Type Name="Buku">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="category" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="author" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Buku_Sewa" Member="Sewas" ThisKey="Id" OtherKey="id_buku" Type="Sewa" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pelanggan" Member="Pelanggans">
+    <Type Name="Pelanggan">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="alamat" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Pelanggan_Sewa" Member="Sewas" ThisKey="Id" OtherKey="id_pelanggan" Type="Sewa" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sewa" Member="Sewas">
+    <Type Name="Sewa">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_pelanggan" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_buku" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="total_buku" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="lama_pinjam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="denda" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Buku_Sewa" Member="Buku" ThisKey="id_buku" OtherKey="Id" Type="Buku" IsForeignKey="true" />
+      <Association Name="Pelanggan_Sewa" Member="Pelanggan" ThisKey="id_pelanggan" OtherKey="Id" Type="Pelanggan" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
